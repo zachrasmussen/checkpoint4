@@ -1,0 +1,27 @@
+/* BASIC STYLES HERE */
+.back-img {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+}
+
+.r-height {
+    height: 30vh;
+}
+
+.timer {
+    font-size: 50px;
+    color: white;
+}
+
+.text-pop {
+    text-shadow: 1px 1px 25px #414141;
+    color: white;
+}
+
+.s-card {
+    background: rgba(218, 217, 217, 0.4);
+    border: 1px solid #a3a3a3;
+    backdrop-filter: blur(10px);
+}

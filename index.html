@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="//cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css">
+  <link rel="icon" href="https://bcw.blob.core.windows.net/public/img/9977764104160066">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/style/main.css">
+  <link rel="stylesheet" href="assets/style/style.css">
+  <title>checkpoint4</title>
+</head>
+
+<body id="back" class="container-fluid back-img">
+  <main>
+
+    <!-- SECTION Temp -->
+    <div id="temp" class="row r-height">
+      <div class="col-12">
+        <div class="d-flex justify-content-end m-3">
+          <div class="col-3 p-3">
+            <h3 class="text-light text-center">${this.weather}</h3>
+            <h4 class="text-light text-center">${this.name}</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION Timer -->
+    <div class="row r-height">
+      <div class="col-12">
+        <div class="d-flex justify-content-center m-3 text-pop">
+          <div class="p-3">
+            <div id="clock" class="timer"></div>
+            <h4 class=" text-light text-center">Hi Zach, You Rock!</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION Quote/Todo List -->
+    <div class="row r-height">
+      <div class="col-12 d-flex mb-5">
+        <div class="col-6 d-flex justify-content-center">
+          <div id="quote" class="p-3 d-flex align-items-center text-pop">
+            <!-- Quote Goes Here -->
+          </div>
+        </div>
+
+        <div class="col-6 d-flex justify-content-end mb-2 pe-5">
+          <div class="col-6 s-card card p-3 elevation-2">
+            <div>
+              <div id="tasks-completed"></div>
+              <div id="total-tasks"></div>
+            </div>
+            <div id="tasks" class="row">
+              <!-- Tasks Go Here -->
+            </div>
+            <div id="form">
+              <!-- Form Goes Here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+  </main>
+
+
+
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"
+    integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.3.10/dist/sweetalert2.all.min.js"
+    integrity="sha256-hw7v8jZF/rFEdx1ZHepT4D73AFTHLu/P9kEyrNesRyc=" crossorigin="anonymous"></script>
+  <script src="app/main.js" type="module"></script>
+</body>
+
+</html>
+
+
+<!-- 
+async toggleTodo(todoId) {
+  let todo = ProxyState.Todo.find(t => t.id == todoId)
+
+  if (!todo) {
+      throw new Error('Bad Todo id')
+  }
+
+  todo.checked = !todo.checked
+  let todoIndex = ProxyState.todo.indexOf(todo)
+
+  let res = await sandboxApi.put(`/zach/todos/${todoId}`, todo)
+  let updatedTodo = new Todo(res.data)
+
+  ProxyState.todos.splice(spellIndex, 1, updatedTodo)
+  ProxyState.todos = ProxyState.todos
+}
+
+async deleteTodo(id) {
+  await sandboxApi.delete(`/zach/todos/${id}`)
+  ProxyState.todos = ProxyState.todos.filter(t => t.id != id)
+}
+
+async getTodos() {
+  let res = await sandboxApi.get('/zach/todos')
+  ProxyState.todos = res.data.map(t => new Todo(t))
+}
+
+async createTodo() {
+  if (ProxyState.todos.find(t => t.name == ProxyState.activeTodo.name))
+
+      let res = await sandboxApi.post('/zach/todos', ProxyState.activeTodo)
+
+  let newTodo = new Todo(res.data)
+  ProxyState.todos = [...ProxyState.todos, newTodo]
+} -->
