@@ -4,18 +4,16 @@ export class Temp {
     this.name = data.name
   }
 
-
-
   get Template() {
     return `
         <div>
-        <div class="d-flex justify-content-center m-3">
-          <div class="col-3 p-3">
-            <h3 class="text-light">${this.tempsService()}</h3>
-            <h4 class="text-light">${this.name}</h4>
+          <div class="d-flex justify-content-end m-3">
+            <div class="col-3 p-3">
+              <h3 class="text-light">${this.temp}</h3>
+              <h4 class="text-light">${this.name}</h4>
+            </div>
           </div>
         </div>
-      </div>
         `
   }
 }

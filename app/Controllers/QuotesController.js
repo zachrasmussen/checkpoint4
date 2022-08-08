@@ -5,7 +5,7 @@ import { Pop } from "../Utils/Pop.js";
 function _drawQuote() {
 
     let quote = ProxyState.quote
-    console.log('Template')
+    // console.log('Template')
     document.getElementById('quote').innerHTML = quote.Template
 }
 

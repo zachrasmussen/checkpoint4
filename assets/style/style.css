@@ -25,3 +25,13 @@
     border: 1px solid #a3a3a3;
     backdrop-filter: blur(10px);
 }
+
+.clock-font {
+    font-family: 'Anton', sans-serif;
+    font-size: 5em;
+}
+
+.rock-font {
+    font-family: 'Cabin', sans-serif;
+    font-size: 2em;
+}

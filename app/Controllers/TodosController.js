@@ -28,11 +28,6 @@ export class TodosController {
         this.getTodos()
     }
 
-    // viewTodos() {
-    //     _drawTodos()
-    //     this.getTodos()
-    // }
-
     async getTodos() {
         try {
             await todosService.getTodos()
@@ -69,26 +64,6 @@ export class TodosController {
             Pop.error(error)
         }
     }
-
-    // adjustTodo(todoId) {
-    //     let todo = ProxyState.todos.find(t => t.id == todoId)
-    //     document.getElementById('form').innerHTML = getTodoForm(todo)
-    // }
-
-    // async editTodo(todoId) {
-    //     try {
-    //         window.event.preventDefault()
-    //         let form = window.event.target
-    //         let todoData = {
-    //             id: todoId,
-    //             description: form.description.value,
-    //         }
-    //         await todosService.editTodo(todoData)
-    //     } catch (error) {
-    //         console.error('[Edit Todo]', error)
-    //         Pop.error(error)
-    //     }
-    // }
 
     async toggleTodo(todoId) {
         try {

@@ -3,9 +3,7 @@ import { tempsService } from "../Services/TempsService.js";
 import { Pop } from "../Utils/Pop.js";
 
 function _drawTemps() {
-
     let temp = ProxyState.temps
-    console.log('Template')
     document.getElementById('temp').innerHTML = temp.Template
 }
 
@@ -24,24 +22,12 @@ export class TempsController {
         }
     }
 
-    convertCel() {
-        let temp = ProxyState.weather.temp
-        let cel = (temp) - 273.15;
-        return cel
-    }
+    // toggleWeather() {
+    //     let far = this.convertFar()
+    //     console.log('farTemp', farTemp);
 
-    convertFar() {
-        let temp = ProxyState.weather.temp
-        let far = 1.8 * ((temp) - 273) + 32;
-        return far
-    }
-
-    toggleWeather() {
-        let far = this.convertFar()
-        console.log('far', far);
-
-        let cel = this.convertCel()
-        console.log('cel', cel);
-    }
+    //     let cel = this.convertCel()
+    //     console.log('celTemp', celTemp);
+    // }
 
 }
