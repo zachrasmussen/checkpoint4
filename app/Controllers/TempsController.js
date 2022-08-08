@@ -25,4 +25,16 @@ export class TempsController {
         console.log('clicked')
         tempsService.changeTemp()
     }
+
+    get convert() {
+        let temp = 0;
+        if (this.clicked) {
+            let temperature = this.temp;
+            temp = temperature - 273.15;
+        } else {
+            let temp = this.temp;
+            temp = (temp - 273) * 1.8 + 32;
+        }
+        return Math.round(temp)
+    }
 }
