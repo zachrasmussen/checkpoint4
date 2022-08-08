@@ -1,30 +1,31 @@
 export class Temp {
   constructor(data) {
-    this.temp = data.temp
-    this.name = data.name
+
+    this.name = data.name || ''
+    this.temp = data.main.temp || 0
+    this.clicked = false
   }
 
   get Template() {
     return `
-        <div>
-          <div class="d-flex justify-content-end m-3">
-            <div class="col-3 p-3">
-              <h3 class="text-light">${this.temp}</h3>
-              <h4 class="text-light">${this.name}</h4>
-            </div>
+        <div class="col-12 d-flex justify-content-end m-3">
+          <div class="col-4 p-3">
+            <h3 class="text-light text-center">${this.convert} <span>${this.clicked ? "C" : "F"}</span></h3>
+            <h4 class="text-light text-center" onclick="app.tempsController.changeTemp()">${this.name}</h4>
           </div>
         </div>
         `
   }
+
+  get convert() {
+    let temp = 0;
+    if (this.clicked) {
+      let temperature = this.temp;
+      temp = temperature - 273.15;
+    } else {
+      let temp = this.temp;
+      temp = (temp - 273) * 1.8 + 32;
+    }
+    return Math.round(temp)
+  }
 }
-
-
-// const kelvin = 293;
-// const celsius = kelvin - 273;
-// let fahrenheit = celsius * (9 / 5) + 32;
-
-// fahrenheit = Math.floor(fahrenheit);
-// console.log(`The temperature is ${fahrenheit} degrees Fahrenheit`);
-
-// celsius = Math.floor(celsius);
-// console.log(`The temperature is ${celsius} degrees celsius`);

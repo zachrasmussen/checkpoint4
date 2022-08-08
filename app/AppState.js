@@ -15,7 +15,7 @@ class AppState extends EventEmitter {
   quote = null
 
   /** @type { import('./Models/Temp.').Temp[] } */
-  temps = null
+  temp = null
 }
 
 export const ProxyState = new Proxy(new AppState(), {

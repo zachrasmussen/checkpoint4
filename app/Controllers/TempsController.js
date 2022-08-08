@@ -2,32 +2,27 @@ import { ProxyState } from "../AppState.js";
 import { tempsService } from "../Services/TempsService.js";
 import { Pop } from "../Utils/Pop.js";
 
-function _drawTemps() {
-    let temp = ProxyState.temps
-    document.getElementById('temp').innerHTML = temp.Template
+function _drawTemp() {
+    let temp = ProxyState.temp
+    document.getElementById('temp').innerHTML = ProxyState.temp.Template
 }
 
 export class TempsController {
     constructor() {
-        ProxyState.on('temps', _drawTemps)
-        this.getTemps()
+        ProxyState.on('temp', _drawTemp)
+        this.getTemp()
     }
 
-    async getTemps() {
+    async getTemp() {
         try {
-            await tempsService.getTemps()
+            await tempsService.getTemp()
         } catch (error) {
-            console.error('[Get Temps]', error);
+            console.error('[Get Temp]', error);
             Pop.error(error)
         }
     }
-
-    // toggleWeather() {
-    //     let far = this.convertFar()
-    //     console.log('farTemp', farTemp);
-
-    //     let cel = this.convertCel()
-    //     console.log('celTemp', celTemp);
-    // }
-
+    changeTemp() {
+        console.log('clicked')
+        tempsService.changeTemp()
+    }
 }
