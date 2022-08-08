@@ -1,8 +1,9 @@
+
 export class Todo {
-    constructor({ id, description }) {
-        this.id = id
-        this.description = description || ''
-        // this.completed = completed || false
+    constructor(data) {
+        this.id = data.id
+        this.description = data.description || ''
+        this.completed = data.completed || false
     }
 
     get Template() {

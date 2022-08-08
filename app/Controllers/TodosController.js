@@ -5,15 +5,15 @@ import { Pop } from "../Utils/Pop.js";
 
 function _drawTodos() {
     let template = ''
-    let todos = ProxyState.todos
-    todos.forEach(t => template += t.Template)
+    // let todos = ProxyState.todos
+    ProxyState.todos.forEach(t => template += t.Template)
     document.getElementById('tasks').innerHTML = template
     document.getElementById('form').innerHTML = getTodoForm()
     document.getElementById('total-tasks').innerHTML = `
     <div class="text-white">
       <div class="d-flex justify-content-center">
         <div>
-            ${ProxyState.todos.filter(s => s.completed).length}
+            ${ProxyState.todos.filter(t => t.completed).length}
             <b>/</b> ${ProxyState.todos.length}
         </div>
         <div>    
@@ -28,10 +28,10 @@ export class TodosController {
         this.getTodos()
     }
 
-    viewTodos() {
-        _drawTodos()
-        this.getTodos()
-    }
+    // viewTodos() {
+    //     _drawTodos()
+    //     this.getTodos()
+    // }
 
     async getTodos() {
         try {
@@ -48,7 +48,6 @@ export class TodosController {
             let form = window.event.target
 
             let newTodo = {
-                id: todoId,
                 description: form.description.value
             }
             await todosService.createTodo(newTodo)
@@ -71,25 +70,25 @@ export class TodosController {
         }
     }
 
-    adjustTodo(todoId) {
-        let todo = ProxyState.todos.find(t => t.id == todoId)
-        document.getElementById('form').innerHTML = getTodoForm(todo)
-    }
+    // adjustTodo(todoId) {
+    //     let todo = ProxyState.todos.find(t => t.id == todoId)
+    //     document.getElementById('form').innerHTML = getTodoForm(todo)
+    // }
 
-    async editTodo(todoId) {
-        try {
-            window.event.preventDefault()
-            let form = window.event.target
-            let todoData = {
-                id: todoId,
-                description: form.description.value,
-            }
-            await todosService.editTodo(todoData)
-        } catch (error) {
-            console.error('[Edit Todo]', error)
-            Pop.error(error)
-        }
-    }
+    // async editTodo(todoId) {
+    //     try {
+    //         window.event.preventDefault()
+    //         let form = window.event.target
+    //         let todoData = {
+    //             id: todoId,
+    //             description: form.description.value,
+    //         }
+    //         await todosService.editTodo(todoData)
+    //     } catch (error) {
+    //         console.error('[Edit Todo]', error)
+    //         Pop.error(error)
+    //     }
+    // }
 
     async toggleTodo(todoId) {
         try {

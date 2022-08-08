@@ -19,13 +19,13 @@ class TodosService {
         ProxyState.todos = ProxyState.todos
     }
 
-    async editTodo(todoData) {
-        let res = await sandboxApi.put(`/zach/todos/${todoData.id}`, todoData)
-        let todo = new Todo(res.data)
-        let todoIndex = ProxyState.todos.findIndex(t => t.id == todoData.id)
-        ProxyState.todos.splice(todoIndex, 1, todo)
-        ProxyState.todos = ProxyState.todos
-    }
+    // async editTodo(todoData) {
+    //     let res = await sandboxApi.put(`/zach/todos/${todoData.id}`, todoData)
+    //     let todo = new Todo(res.data)
+    //     let todoIndex = ProxyState.todos.findIndex(t => t.id == todoData.id)
+    //     ProxyState.todos.splice(todoIndex, 1, todo)
+    //     ProxyState.todos = ProxyState.todos
+    // }
 
     async getTodos() {
         let res = await sandboxApi.get('/zach/todos')
