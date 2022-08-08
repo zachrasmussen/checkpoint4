@@ -21,8 +21,4 @@ export class TempsController {
             Pop.error(error)
         }
     }
-    changeTemp() {
-        console.log('clicked')
-        tempsService.changeTemp()
-    }
 }

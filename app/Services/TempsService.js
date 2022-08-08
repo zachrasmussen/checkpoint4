@@ -8,13 +8,6 @@ class TempsService {
         console.log(res.data.name)
         ProxyState.temp = new Temp(res.data)
     }
-
-    changeTemp() {
-        console.log('tempsService')
-        ProxyState.temp.clicked = !ProxyState.temp.clicked
-        ProxyState.temp = ProxyState.temp
-    }
-
 }
 
 export const tempsService = new TempsService()
